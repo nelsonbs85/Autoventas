@@ -3,12 +3,13 @@ package com.autoventas.autos.infrastructure.repositories;
 import com.autoventas.autos.domain.models.Auto;
 import com.autoventas.autos.domain.ports.out.AutoRepositoryPort;
 import com.autoventas.autos.infrastructure.entities.AutoEntity;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
-@Repository
+@Component
 public class JpaAutoRepositoryAdapter implements AutoRepositoryPort {
 
     private final JpaAutoRepository jpaAutoRepository;

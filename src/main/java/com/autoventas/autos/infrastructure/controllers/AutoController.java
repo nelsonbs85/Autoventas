@@ -56,7 +56,7 @@ public class AutoController {
         }
     }
 
-    @GetMapping("/autoId}/aditionalInfo")
+    @GetMapping("/{autoId}/aditionalInfo")
     public ResponseEntity<AdditionalAutoInfo> getAdditionalAutoInfo(@PathVariable Long autoId){
         AdditionalAutoInfo additionalAutoInfo = autoServicio.getAdditionalAutoInfo(autoId);
         return new ResponseEntity<>(additionalAutoInfo, HttpStatus.OK);
