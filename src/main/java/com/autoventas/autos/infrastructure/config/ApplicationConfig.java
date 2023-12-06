@@ -5,6 +5,7 @@ import com.autoventas.autos.application.usecases.*;
 import com.autoventas.autos.domain.ports.in.GetAdditionalAutoInfo;
 import com.autoventas.autos.domain.ports.out.AutoRepositoryPort;
 import com.autoventas.autos.domain.ports.out.ExternalServicePort;
+import com.autoventas.autos.infrastructure.adapters.ExternalServiceAdapter;
 import com.autoventas.autos.infrastructure.repositories.JpaAutoRepositoryAdapter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -28,5 +29,10 @@ public class ApplicationConfig {
     @Bean
     public GetAdditionalAutoInfo getAdditionalAutoInfo(ExternalServicePort externalServicePort){
         return new GetAdditionalAutoInfoImpl(externalServicePort);
+    }
+
+    @Bean
+    public ExternalServicePort externalServicePort(){
+        return new ExternalServiceAdapter();
     }
 }
